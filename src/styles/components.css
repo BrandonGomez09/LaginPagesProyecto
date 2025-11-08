@@ -1,0 +1,611 @@
+/* ---------- ATOMS ---------- */
+.btn {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.btn:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.title {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.text {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.text.small {
+  font-size: 0.9rem;
+}
+
+.text.large {
+  font-size: 1.25rem;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+  background-color: var(--color-light);
+  box-shadow: var(--shadow);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.logo-text {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--color-primary);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  background-color: var(--color-bg);
+  padding: 6rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.hero-text {
+  flex: 1 1 400px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-image {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 350px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- ABOUT ---------- */
+.about-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.about-content h2 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- HOW IT WORKS ---------- */
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.how-card {
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.how-card:hover {
+  transform: translateY(-5px);
+}
+
+.how-card h3 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- ROLES ---------- */
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.role-card {
+  background-color: var(--color-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.role-card:hover {
+  transform: scale(1.03);
+}
+
+.role-card h3 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+/* ---------- BENEFITS ---------- */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background-color: var(--color-light);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- CTA SECTION ---------- */
+.cta {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+}
+
+.cta-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ---------- CONTACT ---------- */
+.contact-content {
+  text-align: center;
+  max-width: 700px;
+}
+
+.contact-content p {
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--color-light);
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: var(--color-light);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: var(--color-bg);
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 250px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+/* ---------- REGISTRATION FORM ---------- */
+.registration-container {
+  background-color: var(--color-light);
+  padding: 3rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.registration-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.registration-header h2 {
+  color: var(--color-primary);
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-section legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.form-section input,
+.form-section textarea,
+.form-section select {
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+}
+
+/* Hacer que algunos campos ocupen todo el ancho */
+.form-section input[name="email"],
+.form-section input[name="kitchen_name"],
+.form-section textarea[name="description"],
+.form-section input[name="street_address"] {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .registration-container {
+    padding: 1.5rem;
+  }
+  .form-section {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Reset de los campos anchos para que no haya conflicto */
+  .form-section input[name="email"],
+  .form-section input[name="kitchen_name"],
+  .form-section textarea[name="description"],
+  .form-section input[name="street_address"] {
+    grid-column: auto;
+  }
+}
+
+/* ---------- MODAL ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background-color: var(--color-light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #aaa;
+  line-height: 1;
+  padding: 0;
+}
+
+.close-button:hover {
+  color: var(--color-text);
+}
+
+.modal-body {
+  overflow-y: auto;
+  line-height: 1.8;
+}
+
+.modal-body ol, .modal-body ul {
+  padding-left: 20px;
+}
+
+.modal-body li {
+  margin-bottom: 0.75rem;
+}
+
+/* ---------- FOOTER LEGAL LINKS ---------- */
+.legal-link {
+  margin: 0 10px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.legal-link:hover {
+  color: var(--color-bg);
+}
+
+/* ---------- ESTILOS VISUALES ADICIONALES ---------- */
+
+/* ----- ABOUT ----- */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  text-align: left;
+  max-width: 1100px; /* Ancho mayor para el nuevo layout */
+}
+
+.about-text {
+  flex: 1 1 55%;
+}
+
+.about-image {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ----- HOW IT WORKS ----- */
+.how-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.how-card-icon {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+/* ----- ROLES ----- */
+.role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.role-card-icon {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+/* ----- BENEFITS ----- */
+.feature-card-icon {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+/* ----- CONTACT FORM ----- */
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+  color: #aaa;
+}
+
+.input-icon.textarea-icon {
+  top: 1.2rem;
+  transform: none;
+}
+
+.input-with-icon input,
+.input-with-icon textarea {
+  padding-left: 3rem;
+  width: 100%; /* Asegura que el input ocupe todo el espacio */
+}
+
+
+/* ----- RESPONSIVE PARA NUEVOS ESTILOS ----- */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}

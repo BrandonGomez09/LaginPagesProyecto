@@ -1,0 +1,9 @@
+:root {
+  --color-bg: #faf5ef;
+  --color-primary: #6b4e3d;
+  --color-secondary: #9c7b60;
+  --color-text: #3c3c3c;
+  --color-light: #ffffff;
+  --radius: 12px;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
