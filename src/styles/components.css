@@ -609,3 +609,147 @@
     text-align: center;
   }
 }
+
+
+/* ---------- (NUEVO) ESTILOS PARA EL MENÚ DESPLEGABLE DE IMÁGENES ---------- */
+
+.custom-image-select-container {
+  position: relative;
+  width: 100%;
+  font-family: inherit;
+}
+
+/* --- 1. El Trigger (la caja que se cliquea) --- */
+.custom-select-trigger {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  background-color: var(--color-light);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.custom-select-trigger:hover {
+  border-color: #999;
+}
+
+.trigger-preview-img {
+  width: 45px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+.trigger-placeholder-icon {
+  width: 45px;
+  height: 35px;
+  background-color: #f0f0f0;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+.trigger-label {
+  flex-grow: 1;
+  color: var(--color-text);
+  font-size: 1rem;
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  color: #888;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+
+/* --- 2. El Panel de Opciones (el menú) --- */
+.custom-select-options {
+  position: absolute;
+  top: calc(100% + 4px); /* Pequeña separación */
+  left: 0;
+  right: 0;
+  background-color: var(--color-light);
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-height: 250px;
+  overflow-y: auto;
+  list-style: none; /* Quita los puntos de la lista */
+  padding: 0.5rem; /* Espacio interno */
+  margin: 0;
+}
+
+.custom-select-option {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.custom-select-option:hover {
+  background-color: var(--color-bg);
+}
+
+.custom-select-option.selected {
+  background-color: #e6f7ff; /* Un color azulado claro */
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.option-img {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 12px;
+  border: 1px solid #eee;
+}
+
+.option-placeholder-icon {
+  width: 60px;
+  height: 40px;
+  background-color: #f0f0f0;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+/* ---------- (NUEVO) ESTILOS DE VALIDACIÓN DE FORMULARIO ---------- */
+
+/*
+ * Contenedor para el input y su mensaje de error.
+ * Es necesario para que el grid del formulario no se rompa.
+ */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* * Estilo para el input (o select) cuando tiene un error.
+ * ¡Usamos !important para sobreescribir otros estilos de borde!
+ */
+.input-error {
+  border: 1px solid #D93025 !important;
+  background-color: #FDF4F4;
+}
+
+/* * Estilo para el mensaje de error de texto debajo del input.
+ */
+.error-message {
+  color: #D93025; /* Rojo de Google para errores */
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 4px;
+  padding-left: 2px;
+}
