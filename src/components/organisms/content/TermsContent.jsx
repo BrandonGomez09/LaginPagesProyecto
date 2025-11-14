@@ -1,3 +1,4 @@
+// src/components/organisms/content/TermsContent.jsx
 import React from "react";
 
 function TermsContent() {
@@ -16,7 +17,8 @@ function TermsContent() {
         <li>
           <strong>Tu Información:</strong> Te comprometes a proporcionar datos
           verdaderos y mantenerlos actualizados (especialmente tus habilidades y
-          disponibilidad).
+          disponibilidad). El tratamiento de esta información se describe en
+          nuestro Aviso de Privacidad.
         </li>
         <li>
           <strong>Límite de Responsabilidad (Importante):</strong> "Bienestar
@@ -29,14 +31,15 @@ function TermsContent() {
           </ul>
         </li>
         <li>
-          <strong>Protección de Datos:</strong> Tus datos personales se manejan
-          conforme a la Ley Federal de Protección de Datos Personales en Posesión
-          de los Particulares.
+          <strong>Protección de Datos:</strong> El uso, protección y
+          tratamiento de tus datos personales se rige estrictamente por
+          nuestro <strong>Aviso de Privacidad</strong>, así como por la Ley Federal de
+          Protección de Datos Personales en Posesión de los Particulares.
         </li>
         <li>
           <strong>Propiedad Intelectual:</strong> La plataforma, el código y la
-          marca son propiedad de la "Bienestar Integral",
-          protegidos por la Ley Federal del Derecho de Autor.
+          marca son propiedad de "Bienestar Integral", protegidos por la Ley
+          Federal del Derecho de Autor.
         </li>
         <li>
           <strong>Uso Gratuito:</strong> El servicio es gratuito como parte de un

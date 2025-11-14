@@ -1,17 +1,27 @@
+// src/components/organisms/Footer.jsx
 import React from "react";
 import "../../styles/components.css";
 import { FaFacebook, FaInstagram, FaXTwitter } from "react-icons/fa6";
-function Footer({ onOpenModal }) { // Recibe la prop
+// 1. Importa Link para la navegación
+import { Link } from "react-router-dom";
+
+// 2. Ya NO necesitamos 'onOpenModal'
+function Footer() { 
 return (
 <footer className="footer">
 <div className="container footer-content">
 <div className="footer-links-legal" style={{ marginBottom: '1rem' }}>
-<a href="#" onClick={(e) => { e.preventDefault(); onOpenModal('privacy'); }} className="legal-link">
-Política de Privacidad
-</a>
-<a href="#" onClick={(e) => { e.preventDefault(); onOpenModal('terms'); }} className="legal-link">
-Términos y Condiciones
-</a>
+
+{/* El enlace de Privacidad ya debería estar así (apuntando a /privacidad) */}
+<Link to="/privacidad" className="legal-link">
+  Política de Privacidad
+</Link>
+
+{/* 3. CAMBIO: Convertimos el 'a' en un 'Link' a la nueva ruta */}
+<Link to="/terminos" className="legal-link">
+  Términos y Condiciones
+</Link>
+
 </div>
 <p>© 2025 Bienestar Integral. Todos los derechos reservados.</p>
         <div className="footer-links">
