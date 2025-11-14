@@ -1,45 +1,86 @@
+// src/components/organisms/content/PrivacyPolicyContent.jsx
 import React from "react";
 
 function PrivacyPolicyContent() {
   return (
     <>
+      <h3>AVISO DE PRIVACIDAD</h3>
+      
+      <h4>¿Quiénes somos?</h4>
       <p>
-        En Bienestar Integral, tu privacidad es nuestra prioridad. Esta política
-        describe cómo recopilamos, usamos y protegemos tu información personal.
+        Bienestar Integral, con domicilio en Carretera Tuxtla Gutiérrez-Portillo Zaragoza Km.
+        21+500, Colonia Las Brisas, Suchiapa, Chiapas, C.P. 29150, es el responsable
+        del uso y protección de sus datos personales, y al respecto le informamos lo
+        siguiente.
       </p>
-      <h4>1. Información que Recopilamos</h4>
+      
+      <h4>¿Para qué fines utilizaremos sus datos personales?</h4>
       <p>
-        Recopilamos los datos que nos proporcionas directamente durante el
-        registro, como tu nombre, correo electrónico, número de teléfono y, en el
-        caso de las cocinas, los datos de ubicación y contacto.
+        Los datos personales que recabamos de usted, los utilizaremos
+        para las siguientes finalidades que son necesarias para el servicio que
+        solicita:
       </p>
-      <h4>2. Uso de la Información</h4>
+      <ul>
+        <li>Conectarle con cocinas comunitarias o voluntarios.</li>
+        <li>
+          Facilitar la comunicación dentro de la plataforma
+          para coordinar actividades.
+        </li>
+        <li>
+          Garantizar la seguridad y el correcto
+          funcionamiento de nuestros servicios.
+        </li>
+      </ul>
+      
       <p>
-        Utilizamos tu información para:
-        <ul>
-          <li>Conectarte con cocinas comunitarias o voluntarios.</li>
-          <li>Facilitar la comunicación dentro de la plataforma.</li>
-          <li>Mejorar y personalizar tu experiencia.</li>
-          <li>Garantizar la seguridad y el funcionamiento de nuestros servicios.</li>
-        </ul>
+        De manera adicional, utilizaremos
+        su información personal para las siguientes finalidades que no son necesarias
+        para el servicio solicitado, pero que nos permiten y facilitan brindarle una
+        mejor atención:
       </p>
-      <h4>3. Cómo Compartimos tu Información</h4>
+      <ul>
+        <li>
+          Mejorar y personalizar su experiencia en la
+          plataforma.
+        </li>
+      </ul>
+      
       <p>
-        No compartimos tu información personal con terceros con fines de marketing.
-        La información de contacto puede ser visible para los administradores de las
-        cocinas a las que te unes como voluntario, con el único fin de coordinar
-        actividades.
+        En caso de que no desee que sus
+        datos personales sean tratados para esta finalidad adicional, desde este
+        momento usted nos puede comunicar lo anterior a través de un correo a bienestarintegral78@gmail.com.
       </p>
-      <h4>4. Tus Derechos</h4>
       <p>
-        Tienes derecho a acceder, rectificar o cancelar tus datos personales.
-        Puedes ejercer estos derechos contactándonos a través de los canales
-        oficiales de la plataforma.
+        La negativa para el uso de sus
+        datos personales para esta finalidad no podrá ser un motivo para que le
+        neguemos los servicios que solicita o contrata con nosotros.
       </p>
-      <h4>5. Seguridad de los Datos</h4>
+      
+      <h4>¿Cómo protegemos sus datos?</h4>
       <p>
-        Implementamos medidas de seguridad para proteger tu información contra
-        accesos no autorizados. Sin embargo, ningún sistema es 100% seguro.
+        Su información sensible, como sus datos personales (nombre, contacto, ubicación),
+        sus credenciales de acceso, datos financieros (como donativos) e información
+        estratégica (como recetas), es tratada como confidencial y secreta.
+        Implementamos medidas de seguridad para protegerla y mantener su privacidad.
+      </p>
+      
+      <h4>¿Cómo puede eliminar su cuenta?</h4>
+      <p>
+        Usted tiene derecho a cancelar sus datos personales (eliminar su cuenta). El
+        proceso es el siguiente:
+      </p>
+      <ul>
+        <li>
+          El usuario entra al apartado de "Configuración"
+          dentro de la aplicación.
+        </li>
+        <li>Presiona el botón de "Eliminar Cuenta".</li>
+      </ul>
+      <p>
+        Al hacerlo, se enviará
+        automáticamente una solicitud a nuestro equipo de soporte técnico para procesar
+        la baja. Se le notificará al usuario que su cuenta será eliminada en los
+        próximos 5 días hábiles.
       </p>
     </>
   );

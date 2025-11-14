@@ -314,46 +314,19 @@
 }
 
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-
-  .hero-image img {
-    max-width: 250px;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-  }
-
-  .header-content {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-  }
-}
-
-/* ---------- REGISTRATION FORM ---------- */
+/* ---------- REGISTRATION FORM (DISEÑO MEJORADO) ---------- */
 .registration-container {
-  background-color: var(--color-light);
-  padding: 3rem;
+  background-color: #ffffff;
+  padding: 2.5rem 3rem; /* Más espacio interno */
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más suave */
+  max-width: 900px; /* Un poco más ancho para que quepan 2 columnas bien */
   margin: 2rem auto;
 }
 
 .registration-header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .registration-header h2 {
@@ -362,44 +335,85 @@
   margin-bottom: 0.5rem;
 }
 
+.registration-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
 .registration-form {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
+/* Estilo de las secciones (fieldset) */
 .form-section {
-  border: 1px solid #ddd;
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  background-color: #fcfcfc;
+  position: relative; /* Para posicionar la leyenda */
 }
 
 .form-section legend {
-  padding: 0 0.5rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: var(--color-primary);
+  background-color: #ffffff;
+  padding: 0.2rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  /* Hacemos que flote sobre el borde */
+  position: absolute;
+  top: -1.2rem;
+  left: 1.5rem;
 }
 
+/* --- GRIDS Y COLUMNAS (LA CLAVE DEL DISEÑO 2) --- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  gap: 1.5rem; /* Espacio entre campos */
+  margin-top: 0.5rem;
+}
+
+/* Clase auxiliar para que ciertos campos ocupen todo el ancho */
+.input-wrapper.full-width {
+  grid-column: 1 / -1;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+/* Estilos mejorados para los inputs */
 .form-section input,
 .form-section textarea,
 .form-section select {
-  padding: 0.8rem;
-  border-radius: var(--radius);
+  width: 100%;
+  padding: 0.9rem 1rem; /* Más altos para verse modernos */
+  border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
   font-family: inherit;
-  width: 100%;
+  background-color: #fff;
+  transition: all 0.2s ease;
 }
 
-/* Hacer que algunos campos ocupen todo el ancho */
-.form-section input[name="email"],
-.form-section input[name="kitchen_name"],
-.form-section textarea[name="description"],
-.form-section input[name="street_address"] {
-  grid-column: 1 / -1;
+.form-section input:focus,
+.form-section textarea:focus,
+.form-section select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(107, 78, 61, 0.15); /* Sombra de enfoque */
+  outline: none;
+}
+
+.form-section textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 .form-actions {
@@ -409,96 +423,126 @@
   margin-top: 1rem;
 }
 
+/* --- RESPONSIVE PARA EL FORMULARIO --- */
 @media (max-width: 768px) {
   .registration-container {
     padding: 1.5rem;
-  }
-  .form-section {
-    grid-template-columns: 1fr;
+    margin: 1rem;
   }
   
-  /* Reset de los campos anchos para que no haya conflicto */
-  .form-section input[name="email"],
-  .form-section input[name="kitchen_name"],
-  .form-section textarea[name="description"],
-  .form-section input[name="street_address"] {
-    grid-column: auto;
+  .form-grid {
+    grid-template-columns: 1fr; /* Una sola columna en móvil */
+    gap: 1rem;
+  }
+  
+  .form-section {
+    padding: 1.5rem 1rem;
   }
 }
 
-/* ---------- MODAL ---------- */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* --- ESTILOS DE ERROR Y SELECTOR DE IMAGEN (ACTUALIZADOS) --- */
+/* Input con error */
+.input-error {
+  border-color: #d93025 !important;
+  background-color: #fff8f8;
 }
 
-.modal-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
+.error-message {
+  color: #d93025;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+/* Selector de imagen personalizado */
+.custom-image-select-container {
+  position: relative;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.custom-select-trigger {
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1000;
-  animation: fadeIn 0.3s ease-out;
-}
-
-.modal-content {
-  background-color: var(--color-light);
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  width: 90%;
-  max-width: 700px;
-  max-height: 80vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-}
-
-.modal-header h2 {
-  margin: 0;
-  color: var(--color-primary);
-  font-size: 1.5rem;
-}
-
-.close-button {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  font-weight: bold;
+  padding: 0.9rem 1rem; /* Mismo padding que los inputs */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
   cursor: pointer;
-  color: #aaa;
-  line-height: 1;
-  padding: 0;
+  transition: border-color 0.2s;
 }
 
-.close-button:hover {
-  color: var(--color-text);
+.custom-select-trigger:hover {
+  border-color: #999;
 }
 
-.modal-body {
+.trigger-preview-img {
+  width: 40px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.trigger-placeholder-icon {
+  width: 40px;
+  height: 30px;
+  background-color: #eee;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.trigger-label {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: #444;
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.custom-select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 50;
+  max-height: 250px;
   overflow-y: auto;
-  line-height: 1.8;
+  padding: 5px;
+  margin-top: 5px;
+  list-style: none;
 }
 
-.modal-body ol, .modal-body ul {
-  padding-left: 20px;
+.custom-select-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.modal-body li {
-  margin-bottom: 0.75rem;
+.custom-select-option:hover {
+  background-color: #f5f5f5;
+}
+
+.custom-select-option.selected {
+  background-color: #eef4f7;
+  font-weight: 600;
+}
+
+.option-img {
+  width: 50px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
 }
 
 /* ---------- FOOTER LEGAL LINKS ---------- */
@@ -752,4 +796,72 @@
   font-weight: 500;
   margin-top: 4px;
   padding-left: 2px;
+}
+
+
+/* ---------- MODAL (Asegúrate de tener esto) ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 700px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #6b4e3d; /* Tu color primario */
+  font-size: 1.5rem;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #aaa;
+  line-height: 1;
+  padding: 0;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+.modal-body {
+  overflow-y: auto;
+  line-height: 1.8;
 }

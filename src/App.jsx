@@ -1,51 +1,33 @@
-import React, { useState } from "react";
-import LandingPage from "./components/pages/LandingPage";
-import KitchenRegistrationPage from "./components/pages/KitchenRegistrationPage";
-import Modal from "./components/molecules/Modal";
-import TermsContent from "./components/organisms/content/TermsContent";
-import PrivacyPolicyContent from "./components/organisms/content/PrivacyPolicyContent";
+// src/App.jsx
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+// Importa tu layout
+import MainLayout from './components/layout/MainLayout';
+
+// Importa tus páginas
+import LandingPage from './components/pages/LandingPage';
+import KitchenRegistrationPage from './components/pages/KitchenRegistrationPage';
+import PrivacyPolicyPage from './components/pages/PrivacyPolicyPage';
+// 1. Importa la nueva página de Términos
+import TermsPage from './components/pages/TermsPage'; 
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("landing");
-  const [modalContent, setModalContent] = useState(null); // null, 'terms', or 'privacy'
-
-  const showRegistration = () => setCurrentPage("registration");
-  const showLanding = () => setCurrentPage("landing");
-
-  const openModal = (content) => setModalContent(content);
-  const closeModal = () => setModalContent(null);
-
-  const renderPage = () => {
-    const pageProps = {
-      onNavigateToRegistration: showRegistration,
-      onOpenModal: openModal,
-    };
-    if (currentPage === "landing") {
-      return <LandingPage {...pageProps} />;
-    }
-    if (currentPage === "registration") {
-      return <KitchenRegistrationPage onNavigateToLanding={showLanding} onOpenModal={openModal} />;
-    }
-    return <LandingPage {...pageProps} />;
-  };
-
+  
   return (
-    <>
-      {renderPage()}
-
-      <Modal
-        isOpen={!!modalContent}
-        onClose={closeModal}
-        title={
-          modalContent === "terms"
-            ? "Términos y Condiciones"
-            : "Política de Privacidad"
-        }
-      >
-        {modalContent === "terms" && <TermsContent />}
-        {modalContent === "privacy" && <PrivacyPolicyContent />}
-      </Modal>
-    </>
+    <Routes>
+      {/* El MainLayout sigue siendo el padre de todas las rutas */}
+      <Route path="/" element={<MainLayout />}>
+        
+        <Route index element={<LandingPage />} />
+        <Route path="/registro" element={<KitchenRegistrationPage />} />
+        <Route path="/privacidad" element={<PrivacyPolicyPage />} />
+        
+        {/* 2. Añade la nueva ruta para Términos y Condiciones */}
+        <Route path="/terminos" element={<TermsPage />} />
+        
+      </Route>
+    </Routes>
   );
 }
 

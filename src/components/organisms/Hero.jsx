@@ -1,8 +1,9 @@
 import React from "react";
 import "../../styles/components.css";
 import Button from "../atoms/Button";
-// 1. Importa la nueva imagen
 import heroMainImage from "../../assets/images/hero-main-image.png";
+// 1. Importa Link
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -17,13 +18,14 @@ function Hero() {
             <a href="#contact">
               <Button text="Unirme como voluntario" />
             </a>
-            <a href="#contact">
+            
+            {/* 2. Cambia esto para que sea un Link a "/registro" */}
+            <Link to="/registro">
               <Button text="Soy dueño de cocina" type="secondary" />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hero-image">
-          {/* 2. Usa la nueva imagen y un alt text descriptivo */}
           <img src={heroMainImage} alt="Voluntarios colaborando en una cocina comunitaria" />
         </div>
       </div>

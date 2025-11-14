@@ -9,18 +9,22 @@ import CTASection from "../organisms/CTASection";
 import Contact from "../organisms/Contact";
 import Footer from "../organisms/Footer";
 
-function LandingPage({ onNavigateToRegistration, onOpenModal  }) { // Recibe la prop
+// 1. LIMPIEZA: Se eliminan todas las props de navegación
+function LandingPage() { 
   return (
     <>
-      <Header />
+      {/* Header y Footer ya no se renderizan aquí, 
+        se renderizan automáticamente desde 'MainLayout' 
+      */}
       <Hero />
       <About />
       <HowItWorks />
       <Roles />
       <Benefits />
-      <CTASection onNavigateToRegistration={onNavigateToRegistration} /> 
+      {/* 2. CTASection ya no necesita props */}
+      <CTASection /> 
       <Contact />
-      <Footer onOpenModal={onOpenModal} /> {/* Pasa la prop a Footer */}
+      {/* 3. Footer ya no se renderiza aquí */}
     </>
   );
 }

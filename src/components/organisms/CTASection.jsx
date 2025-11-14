@@ -1,8 +1,11 @@
 import React from "react";
 import "../../styles/components.css";
 import Button from "../atoms/Button";
+// 1. Importa Link
+import { Link } from "react-router-dom";
 
-function CTASection({ onNavigateToRegistration }) { // Recibe la prop
+// 2. Ya no necesita la prop 'onNavigateToRegistration'
+function CTASection() { 
   return (
     <section className="section cta">
       <div className="container cta-content">
@@ -15,12 +18,14 @@ function CTASection({ onNavigateToRegistration }) { // Recibe la prop
           <a href="#contact">
             <Button text="Unirme como voluntario" />
           </a>
-          {/* Este botón ahora cambia la vista */}
-          <Button 
-            text="Registrar mi cocina" 
-            onClick={onNavigateToRegistration} 
-          />
-        </div>
+          
+          {/* 3. Envuelve el Botón en un Link a "/registro" */}
+          <Link to="/registro">
+            <Button 
+              text="Registrar mi cocina" 
+            />
+          </Link>
+       </div>
       </div>
     </section>
   );
