@@ -1,9 +1,24 @@
+/* src/styles/variables.css */
+
 :root {
-  --color-bg: #faf5ef;
-  --color-primary: #6b4e3d;
-  --color-secondary: #9c7b60;
-  --color-text: #3c3c3c;
-  --color-light: #ffffff;
+  /* --- Colores de la Nueva Paleta --- */
+  --color-primary: #FFD700;     /* Tu amarillo primario */
+  --color-on-primary: #000000;  /* Texto sobre primario (Negro) */
+  --color-secondary: #000000;    /* Gris/Taupe oscuro (secundario) */
+  --color-bg: #FFFFFF;          /* Fondo (Blanco puro) */
+  --color-text: #1E1C16;        /* Texto (Negro suave) */
+  --color-light: #FFFFFF;       /* Se mantiene como blanco (para superficies) */
+  --color-error: #BA1A1A;       /* Para validación de formularios */
+  
+  /* --- Variables de UI --- */
   --radius: 12px;
   --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* --- (Opcional) Guardamos los colores viejos por si los necesitas --- */
+  /*
+  --color-viejo-primary: #6b4e3d;
+  --color-viejo-secondary: #9c7b60;
+  --color-viejo-bg: #faf5ef;
+  --color-viejo-text: #3c3c3c;
+  */
 }

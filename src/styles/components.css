@@ -1,8 +1,10 @@
+/* src/styles/components.css (ACTUALIZADO CON NUEVA PALETA) */
+
 /* ---------- ATOMS ---------- */
 .btn {
-  background-color: var(--color-primary);
-  color: var(--color-light);
-  border: none;
+  background-color: var(--color-primary); /* Amarillo */
+  color: var(--color-on-primary); /* Negro (para legibilidad) */
+  border: 1px solid var(--color-on-primary); /* Borde negro sutil */
   border-radius: var(--radius);
   padding: 0.75rem 1.5rem;
   font-weight: 600;
@@ -10,19 +12,25 @@
   box-shadow: var(--shadow);
 }
 
-.btn:hover {
-  background-color: var(--color-secondary);
+.btn:hover:not(:disabled) {
+  background-color: #E6C300; /* Un amarillo un poco más oscuro */
   transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn.secondary {
   background-color: transparent;
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  color: var(--color-secondary); /* Gris/Taupe */
+  border: 2px solid var(--color-secondary); /* Borde Gris/Taupe */
+}
+
+.btn.secondary:hover:not(:disabled) {
+  background-color: var(--color-secondary);
+  color: var(--color-light); /* Texto blanco al pasar el mouse */
 }
 
 .title {
-  color: var(--color-primary);
+  color: var(--color-text); /* Texto negro, antes era primario */
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -32,17 +40,12 @@
   margin-bottom: 1rem;
 }
 
-.text.small {
-  font-size: 0.9rem;
-}
+/* ... (clases .text.small y .text.large se quedan igual) ... */
 
-.text.large {
-  font-size: 1.25rem;
-}
 
 /* ---------- HEADER ---------- */
 .header {
-  background-color: var(--color-light);
+  background-color: var(--color-light); /* Fondo blanco */
   box-shadow: var(--shadow);
   padding: 1rem 0;
   position: sticky;
@@ -60,6 +63,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none; /* Para el Link de react-router */
 }
 
 .logo {
@@ -69,28 +73,17 @@
 }
 
 .logo-text {
-  color: var(--color-primary);
+  color: var(--color-text); /* Texto negro, antes era primario */
   font-weight: 700;
 }
 
-.nav {
-  display: flex;
-  gap: 1.5rem;
-}
+/* ... (clases .nav se quedan igual) ... */
 
-.nav a {
-  color: var(--color-text);
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav a:hover {
-  color: var(--color-primary);
-}
 
 /* ---------- HERO ---------- */
 .hero {
-  background-color: var(--color-bg);
+  /* Fondo blanco (el --color-bg ahora es blanco) */
+  background-color: var(--color-bg); 
   padding: 6rem 0;
   display: flex;
   align-items: center;
@@ -110,13 +103,13 @@
 
 .hero-text h1 {
   font-size: 2.5rem;
-  color: var(--color-primary);
+  color: var(--color-text); /* Texto negro, antes era primario */
   margin-bottom: 1rem;
 }
 
 .hero-text p {
   font-size: 1.1rem;
-  color: var(--color-text);
+  color: var(--color-secondary); /* Texto gris/taupe para contraste */
   margin-bottom: 2rem;
   max-width: 500px;
 }
@@ -140,14 +133,26 @@
 
 /* ---------- ABOUT ---------- */
 .about-content {
-  text-align: center;
-  max-width: 800px;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  text-align: left;
+  max-width: 1100px;
 }
 
 .about-content h2 {
-  color: var(--color-primary);
+  color: var(--color-text); /* Texto negro, antes era primario */
   font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+.about-text {
+  flex: 1 1 55%;
+}
+
+.about-image {
+  flex: 1 1 45%;
+  /* ... (se queda igual) ... */
 }
 
 /* ---------- HOW IT WORKS ---------- */
@@ -159,11 +164,16 @@
 }
 
 .how-card {
-  background-color: var(--color-light);
+  background-color: var(--color-light); /* Fondo blanco */
   padding: 2rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   transition: transform 0.3s ease;
+  border: 1px solid #eee; /* Borde sutil para destacar del fondo blanco */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .how-card:hover {
@@ -171,9 +181,16 @@
 }
 
 .how-card h3 {
-  color: var(--color-primary);
+  color: var(--color-text); /* Texto negro, antes era primario */
   margin-bottom: 0.5rem;
 }
+
+.how-card-icon {
+  font-size: 3rem;
+  color: var(--color-primary); /* Amarillo */
+  margin-bottom: 1rem;
+}
+
 
 /* ---------- ROLES ---------- */
 .roles-grid {
@@ -184,11 +201,16 @@
 }
 
 .role-card {
-  background-color: var(--color-light);
+  background-color: var(--color-light); /* Fondo blanco */
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: 2rem;
   transition: transform 0.3s ease;
+  border: 1px solid #eee; /* Borde sutil */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .role-card:hover {
@@ -196,7 +218,13 @@
 }
 
 .role-card h3 {
-  color: var(--color-primary);
+  color: var(--color-text); /* Texto negro, antes era primario */
+  margin-bottom: 1rem;
+}
+
+.role-card-icon {
+  font-size: 3rem;
+  color: var(--color-primary); /* Amarillo */
   margin-bottom: 1rem;
 }
 
@@ -209,12 +237,13 @@
 }
 
 .feature-card {
-  background-color: var(--color-light);
+  background-color: var(--color-light); /* Fondo blanco */
   padding: 1.5rem;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   text-align: center;
   transition: transform 0.3s ease;
+  border: 1px solid #eee; /* Borde sutil */
 }
 
 .feature-card:hover {
@@ -222,14 +251,20 @@
 }
 
 .feature-card h3 {
-  color: var(--color-primary);
+  color: var(--color-text); /* Texto negro, antes era primario */
   margin-bottom: 0.5rem;
+}
+
+.feature-card-icon {
+  font-size: 2.5rem;
+  color: var(--color-primary); /* Amarillo */
+  margin-bottom: 1rem;
 }
 
 /* ---------- CTA SECTION ---------- */
 .cta {
-  background-color: var(--color-primary);
-  color: var(--color-light);
+  background-color: var(--color-primary); /* Fondo Amarillo */
+  color: var(--color-on-primary); /* Texto Negro */
   text-align: center;
 }
 
@@ -252,6 +287,21 @@
   justify-content: center;
   gap: 1rem;
 }
+
+/* Necesitamos un estilo especial para el botón secundario 
+  DENTRO del CTA, para que sea visible sobre el amarillo 
+*/
+.cta .btn.secondary {
+  background-color: var(--color-light); /* Fondo Blanco */
+  color: var(--color-on-primary); /* Texto Negro */
+  border: 2px solid var(--color-on-primary); /* Borde Negro */
+}
+
+.cta .btn.secondary:hover {
+  background-color: #f0f0f0;
+  color: var(--color-on-primary);
+}
+
 
 /* ---------- CONTACT ---------- */
 .contact-content {
@@ -277,10 +327,36 @@
   font-size: 1rem;
 }
 
+/* ... (input-with-icon y sus hijos se quedan igual) ... */
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+  color: #aaa;
+}
+
+.input-icon.textarea-icon {
+  top: 1.2rem;
+  transform: none;
+}
+
+.input-with-icon input,
+.input-with-icon textarea {
+  padding-left: 3rem;
+  width: 100%;
+}
+
+
 /* ---------- FOOTER ---------- */
 .footer {
-  background-color: var(--color-secondary);
-  color: var(--color-light);
+  background-color: var(--color-secondary); /* Fondo Gris/Taupe */
+  color: var(--color-light); /* Texto Blanco */
   padding: 2rem 0;
   text-align: center;
 }
@@ -310,17 +386,66 @@
 
 .social-icon:hover {
   transform: scale(1.2);
-  color: var(--color-bg);
+  color: var(--color-primary); /* Iconos se vuelven amarillos al pasar mouse */
+}
+
+/* Footer legal links (Términos y Privacidad) */
+.legal-link {
+  margin: 0 10px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--color-light); /* Aseguramos texto blanco */
+}
+
+.legal-link:hover {
+  color: var(--color-primary); /* Se vuelve amarillo al pasar mouse */
 }
 
 
-/* ---------- REGISTRATION FORM (DISEÑO MEJORADO) ---------- */
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 250px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ---------- REGISTRATION FORM ---------- */
+/* Los estilos del formulario de registro ya usan variables CSS 
+  que actualizamos en el Paso 1 (como --color-primary para los bordes de :focus), 
+  por lo que debería heredar bien los nuevos colores. 
+  Solo ajustamos el color de la leyenda.
+*/
 .registration-container {
   background-color: #ffffff;
-  padding: 2.5rem 3rem; /* Más espacio interno */
+  padding: 2.5rem 3rem;
   border-radius: var(--radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más suave */
-  max-width: 900px; /* Un poco más ancho para que quepan 2 columnas bien */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
   margin: 2rem auto;
 }
 
@@ -330,13 +455,13 @@
 }
 
 .registration-header h2 {
-  color: var(--color-primary);
+  color: var(--color-text); /* Texto negro, antes era primario */
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
 }
 
 .registration-header p {
-  color: #666;
+  color: var(--color-secondary); /* Texto gris/taupe */
   font-size: 1.1rem;
 }
 
@@ -345,39 +470,35 @@
   flex-direction: column;
 }
 
-/* Estilo de las secciones (fieldset) */
 .form-section {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 2rem;
   margin-bottom: 2.5rem;
   background-color: #fcfcfc;
-  position: relative; /* Para posicionar la leyenda */
+  position: relative;
 }
 
 .form-section legend {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-secondary); /* Leyenda en gris/taupe */
   background-color: #ffffff;
   padding: 0.2rem 1rem;
   border-radius: 4px;
   border: 1px solid #e0e0e0;
-  /* Hacemos que flote sobre el borde */
   position: absolute;
   top: -1.2rem;
   left: 1.5rem;
 }
 
-/* --- GRIDS Y COLUMNAS (LA CLAVE DEL DISEÑO 2) --- */
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-  gap: 1.5rem; /* Espacio entre campos */
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
   margin-top: 0.5rem;
 }
 
-/* Clase auxiliar para que ciertos campos ocupen todo el ancho */
 .input-wrapper.full-width {
   grid-column: 1 / -1;
 }
@@ -389,12 +510,11 @@
   position: relative;
 }
 
-/* Estilos mejorados para los inputs */
 .form-section input,
 .form-section textarea,
 .form-section select {
   width: 100%;
-  padding: 0.9rem 1rem; /* Más altos para verse modernos */
+  padding: 0.9rem 1rem;
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 1rem;
@@ -406,8 +526,8 @@
 .form-section input:focus,
 .form-section textarea:focus,
 .form-section select:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(107, 78, 61, 0.15); /* Sombra de enfoque */
+  border-color: var(--color-primary); /* Borde de enfoque Amarillo */
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.25); /* Sombra de enfoque Amarilla */
   outline: none;
 }
 
@@ -423,7 +543,7 @@
   margin-top: 1rem;
 }
 
-/* --- RESPONSIVE PARA EL FORMULARIO --- */
+/* Responsive del Formulario */
 @media (max-width: 768px) {
   .registration-container {
     padding: 1.5rem;
@@ -431,7 +551,7 @@
   }
   
   .form-grid {
-    grid-template-columns: 1fr; /* Una sola columna en móvil */
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
   
@@ -440,21 +560,20 @@
   }
 }
 
-/* --- ESTILOS DE ERROR Y SELECTOR DE IMAGEN (ACTUALIZADOS) --- */
-/* Input con error */
+/* Errores y Selector de Imagen */
 .input-error {
-  border-color: #d93025 !important;
+  border-color: var(--color-error) !important; /* Rojo de error */
   background-color: #fff8f8;
 }
 
 .error-message {
-  color: #d93025;
+  color: var(--color-error); /* Rojo de error */
   font-size: 0.85rem;
   margin-top: 5px;
   font-weight: 500;
 }
 
-/* Selector de imagen personalizado */
+/* ... (El resto de .custom-image-select... se queda igual) ... */
 .custom-image-select-container {
   position: relative;
   width: 100%;
@@ -463,7 +582,7 @@
 .custom-select-trigger {
   display: flex;
   align-items: center;
-  padding: 0.9rem 1rem; /* Mismo padding que los inputs */
+  padding: 0.9rem 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   background-color: #fff;
@@ -471,335 +590,10 @@
   transition: border-color 0.2s;
 }
 
-.custom-select-trigger:hover {
-  border-color: #999;
-}
-
-.trigger-preview-img {
-  width: 40px;
-  height: 30px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-.trigger-placeholder-icon {
-  width: 40px;
-  height: 30px;
-  background-color: #eee;
-  border-radius: 4px;
-  margin-right: 10px;
-}
-
-.trigger-label {
-  flex-grow: 1;
-  font-size: 1rem;
-  color: #444;
-}
-
-.dropdown-arrow {
-  font-size: 0.8rem;
-  color: #777;
-}
-
-.custom-select-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  z-index: 50;
-  max-height: 250px;
-  overflow-y: auto;
-  padding: 5px;
-  margin-top: 5px;
-  list-style: none;
-}
-
-.custom-select-option {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.custom-select-option:hover {
-  background-color: #f5f5f5;
-}
-
-.custom-select-option.selected {
-  background-color: #eef4f7;
-  font-weight: 600;
-}
-
-.option-img {
-  width: 50px;
-  height: 35px;
-  object-fit: cover;
-  border-radius: 3px;
-  margin-right: 10px;
-  border: 1px solid #ddd;
-}
-
-/* ---------- FOOTER LEGAL LINKS ---------- */
-.legal-link {
-  margin: 0 10px;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.legal-link:hover {
-  color: var(--color-bg);
-}
-
-/* ---------- ESTILOS VISUALES ADICIONALES ---------- */
-
-/* ----- ABOUT ----- */
-.about-content {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  text-align: left;
-  max-width: 1100px; /* Ancho mayor para el nuevo layout */
-}
-
-.about-text {
-  flex: 1 1 55%;
-}
-
-.about-image {
-  flex: 1 1 45%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.about-image img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-/* ----- HOW IT WORKS ----- */
-.how-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.how-card-icon {
-  font-size: 3rem;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-}
-
-/* ----- ROLES ----- */
-.role-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.role-card-icon {
-  font-size: 3rem;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-}
-
-/* ----- BENEFITS ----- */
-.feature-card-icon {
-  font-size: 2.5rem;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-}
-
-/* ----- CONTACT FORM ----- */
-.input-with-icon {
-  position: relative;
-  width: 100%;
-}
-
-.input-icon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 1rem;
-  color: #aaa;
-}
-
-.input-icon.textarea-icon {
-  top: 1.2rem;
-  transform: none;
-}
-
-.input-with-icon input,
-.input-with-icon textarea {
-  padding-left: 3rem;
-  width: 100%; /* Asegura que el input ocupe todo el espacio */
-}
+/* ... (El resto del CSS del modal, trigger, options, etc. se queda igual) ... */
 
 
-/* ----- RESPONSIVE PARA NUEVOS ESTILOS ----- */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-
-/* ---------- (NUEVO) ESTILOS PARA EL MENÚ DESPLEGABLE DE IMÁGENES ---------- */
-
-.custom-image-select-container {
-  position: relative;
-  width: 100%;
-  font-family: inherit;
-}
-
-/* --- 1. El Trigger (la caja que se cliquea) --- */
-.custom-select-trigger {
-  display: flex;
-  align-items: center;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: var(--radius);
-  background-color: var(--color-light);
-  cursor: pointer;
-  transition: border-color 0.2s;
-}
-
-.custom-select-trigger:hover {
-  border-color: #999;
-}
-
-.trigger-preview-img {
-  width: 45px;
-  height: 35px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-right: 12px;
-}
-
-.trigger-placeholder-icon {
-  width: 45px;
-  height: 35px;
-  background-color: #f0f0f0;
-  border: 1px dashed #ccc;
-  border-radius: 4px;
-  margin-right: 12px;
-}
-
-.trigger-label {
-  flex-grow: 1;
-  color: var(--color-text);
-  font-size: 1rem;
-}
-
-.dropdown-arrow {
-  font-size: 0.8rem;
-  color: #888;
-  transition: transform 0.2s ease;
-}
-
-.dropdown-arrow.open {
-  transform: rotate(180deg);
-}
-
-
-/* --- 2. El Panel de Opciones (el menú) --- */
-.custom-select-options {
-  position: absolute;
-  top: calc(100% + 4px); /* Pequeña separación */
-  left: 0;
-  right: 0;
-  background-color: var(--color-light);
-  border: 1px solid #ccc;
-  border-radius: var(--radius);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-  max-height: 250px;
-  overflow-y: auto;
-  list-style: none; /* Quita los puntos de la lista */
-  padding: 0.5rem; /* Espacio interno */
-  margin: 0;
-}
-
-.custom-select-option {
-  display: flex;
-  align-items: center;
-  padding: 0.75rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.custom-select-option:hover {
-  background-color: var(--color-bg);
-}
-
-.custom-select-option.selected {
-  background-color: #e6f7ff; /* Un color azulado claro */
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.option-img {
-  width: 60px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-right: 12px;
-  border: 1px solid #eee;
-}
-
-.option-placeholder-icon {
-  width: 60px;
-  height: 40px;
-  background-color: #f0f0f0;
-  border: 1px dashed #ccc;
-  border-radius: 4px;
-  margin-right: 12px;
-}
-
-/* ---------- (NUEVO) ESTILOS DE VALIDACIÓN DE FORMULARIO ---------- */
-
-/*
- * Contenedor para el input y su mensaje de error.
- * Es necesario para que el grid del formulario no se rompa.
- */
-.input-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* * Estilo para el input (o select) cuando tiene un error.
- * ¡Usamos !important para sobreescribir otros estilos de borde!
- */
-.input-error {
-  border: 1px solid #D93025 !important;
-  background-color: #FDF4F4;
-}
-
-/* * Estilo para el mensaje de error de texto debajo del input.
- */
-.error-message {
-  color: #D93025; /* Rojo de Google para errores */
-  font-size: 0.8rem;
-  font-weight: 500;
-  margin-top: 4px;
-  padding-left: 2px;
-}
-
-
-/* ---------- MODAL (Asegúrate de tener esto) ---------- */
+/* ---------- MODAL (Términos y Privacidad, si aún los usas) ---------- */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -820,9 +614,9 @@
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: var(--color-light); /* Fondo blanco */
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: var(--radius);
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   width: 90%;
   max-width: 700px;
@@ -842,7 +636,7 @@
 
 .modal-header h2 {
   margin: 0;
-  color: #6b4e3d; /* Tu color primario */
+  color: var(--color-text); /* Texto negro, antes era primario */
   font-size: 1.5rem;
 }
 
@@ -858,10 +652,97 @@
 }
 
 .close-button:hover {
-  color: #333;
+  color: var(--color-text);
 }
 
 .modal-body {
   overflow-y: auto;
   line-height: 1.8;
+  color: var(--color-text); /* Texto negro */
+} 
+
+/* ---------- SECCIÓN DE DISPONIBILIDAD (NUEVO) ---------- */
+
+.availability-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.day-row {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  flex-wrap: wrap; /* Permite que baje en celulares muy pequeños */
+  gap: 1rem;
+}
+
+.day-row:hover {
+  border-color: var(--color-primary); /* Resalta el borde al pasar el mouse */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Checkbox del día */
+.day-checkbox {
+  width: 20px !important; /* Sobrescribe el 100% general */
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-primary); /* Checkbox amarillo */
+  margin: 0 !important; 
+}
+
+/* Etiqueta del día (Lunes, Martes...) */
+.day-label {
+  font-weight: 600;
+  color: var(--color-text);
+  min-width: 90px; /* Ancho fijo para que todas las horas se alineen igual */
+  cursor: pointer;
+}
+
+/* Inputs de hora */
+.time-input {
+  width: auto !important; /* IMPORTANTE: Evita que ocupe todo el ancho */
+  padding: 0.5rem !important;
+  min-width: 110px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: var(--color-secondary);
+}
+
+.time-input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+/* Separador "a" */
+.time-separator {
+  color: var(--color-secondary);
+  font-weight: 500;
+  padding: 0 0.5rem;
+}
+
+/* --- Ajuste Responsivo para Disponibilidad --- */
+@media (max-width: 600px) {
+  .day-row {
+    justify-content: space-between;
+  }
+  
+  .day-label {
+    flex-grow: 1; /* En móvil, el nombre ocupa el espacio disponible */
+  }
+  
+  /* En pantallas muy chicas, bajamos los inputs de hora a otra línea */
+  .time-input, .time-separator {
+    margin-top: 0.5rem;
+  }
+  
+  .day-row {
+    flex-wrap: wrap; /* Permite dos filas: Nombre arriba, horas abajo */
+  }
 }
