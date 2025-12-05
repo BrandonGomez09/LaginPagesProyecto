@@ -312,7 +312,7 @@ function KitchenRegistrationForm() {
               <input 
                 name="postalCode" 
                 type="text" 
-                placeholder="Código Postal (Escribe para buscar colonias)" 
+                placeholder="Código Postal" 
                 maxLength="5"
                 value={postalCode}
                 onChange={(e) => setPostalCode(e.target.value.replace(/\D/g, ''))}
@@ -335,7 +335,7 @@ function KitchenRegistrationForm() {
                 <input 
                   name="neighborhood" 
                   type="text" 
-                  placeholder={isLoadingColonias ? "Cargando..." : "Colonia (Escríbela si no cargó)"}
+                  placeholder={isLoadingColonias ? "Cargando..." : ""}
                   required 
                   className={errors.neighborhood ? 'input-error' : ''} 
                 />
