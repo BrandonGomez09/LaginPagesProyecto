@@ -335,7 +335,7 @@ function KitchenRegistrationForm() {
                 <input 
                   name="neighborhood" 
                   type="text" 
-                  placeholder={isLoadingColonias ? "Cargando..." : ""}
+                  placeholder={isLoadingColonias ? "Cargando..." : "Colonia"}
                   required 
                   className={errors.neighborhood ? 'input-error' : ''} 
                 />
